@@ -9,5 +9,7 @@ class Program
         Console.Write("Input: ");
         string input = Console.ReadLine();
         Console.WriteLine($"your input is ({input})");
+        string valueInText = "42";
+        int number = int.Parse(valueInText);
     }
 }
