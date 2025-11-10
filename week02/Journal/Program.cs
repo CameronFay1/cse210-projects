@@ -1,5 +1,5 @@
 using System;
-
+// added a are you sure on the quit option
 class Program
 {
     static void Main(string[] args)
@@ -23,7 +23,7 @@ class Program
                 Console.WriteLine(Prompt);
                 string promptAnuswer = Console.ReadLine();
                 entry._entryText = promptAnuswer;
-                
+
                 journal.AddEntry(entry);
             }
             else if (input == 2)
@@ -42,6 +42,19 @@ class Program
                 Console.Write("Enter the file name: ");
                 string savefileInput = Console.ReadLine();
                 journal.SaveToFile(savefileInput);
+            }
+            else if (input == 5)
+            {
+                Console.Write("Are you sure you what to quit you will lose all entrys that are not saved Y/N ");
+                string quitinput = Console.ReadLine().ToLower();
+                if (quitinput == "y")
+                {
+                    break;
+                }
+                else if (quitinput == "n")
+                {
+                    input = 0;
+                }
             }
         }
 
