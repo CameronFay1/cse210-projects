@@ -1,17 +1,17 @@
 using System;
 using System.Diagnostics;
 using System.Drawing;
-
+// i added a way to remove a goal form the list.
 class Program
 {
     static void Main(string[] args)
     {
         GoalManager GM = new GoalManager();
         string input = "";
-        while (input != "6")
+        while (input != "7")
         {
             Console.WriteLine($"\nYou have {GM.GetScore()} Points \n");
-            Console.Write("Menu Options:\n   1. Create New Goal\n   2. List Goals\n   3. Save Goals\n   4. Load Goals\n   5. Record Event\n   6. Quit\nSelect a choice from the menu: ");
+            Console.Write("Menu Options:\n   1. Create New Goal\n   2. List Goals\n   3. Save Goals\n   4. Load Goals\n   5. Record Event\n   6. Remove Goal\n   7. Quit\nSelect a choice from the menu: ");
             input = Console.ReadLine();
             
 
@@ -83,6 +83,10 @@ class Program
                GM.DisplayGoals();
             }
             else if (input == "6")
+            {
+                GM.RemoveGoal();
+            }
+            else if (input == "7")
             {
                 Console.WriteLine("\nGoodbye.\n");
                 break;

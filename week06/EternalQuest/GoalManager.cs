@@ -39,7 +39,7 @@ public class GoalManager
             number++;
             Console.WriteLine($"{number}. {goal.GetName()}");
         }
-        Console.Write("WHich goal did you accomplish? ");
+        Console.Write("Which goal did you accomplish? ");
         int input = int.Parse(Console.ReadLine());
         _goals[input - 1].Completed();
         _score += _goals[input - 1].GetPoints();
@@ -47,15 +47,21 @@ public class GoalManager
         Console.WriteLine($"You now have {_score} points.");
         Thread.Sleep(1500);
     }
+    public void RemoveGoal()
+    {
+        int number = 0;
+        Console.WriteLine("The goals are:");
+        foreach (Goals goal in _goals)
+        {
+            number++;
+            Console.WriteLine($"{number}. {goal.GetName()}");
+        }
+        Console.Write("Which goal do you whant to remove? ");
+        int input = int.Parse(Console.ReadLine());
+        _goals.RemoveAt(input - 1);
+    }
     public void SaveGoals(string fileName)
     {
-        // Console.Write("do you what to emty that file first yes/no: ");
-        // string input = Console.ReadLine().ToLower();
-        // if (input == "yes")
-        // {
-        // File.WriteAllText(fileName, "");
-        // Thread.Sleep(1000);
-        // }
         using (StreamWriter outputFile = new StreamWriter(fileName))
         {
             outputFile.WriteLine(_score);
