@@ -1,7 +1,0 @@
-553
-SimpleGoal|1|1|1|True
-EnternalGoal|2|2|2|False
-CheckListGoal|3|3|3|False|3|3|1
-SimpleGoal|simple|des|49|True
-SimpleGoal|eat caca|caca|500|True
-CheckListGoal|sd|ds|35|False|466|35|0
